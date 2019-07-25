@@ -1,0 +1,53 @@
+<div class="alert-box">
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Share</h4>
+    <button type="button" class="button pull-right" (click)="_bsModalRef.hide()">
+      <i class="icon-close">X</i>
+    </button>
+  </div>
+
+  <div class="modal-body">
+
+    <form #shareMessageForm=ngForm>
+      <span *ngFor="let friend of friendList" class="checkbox">
+        <label>
+          <input type="checkbox" id="{{friend.memberID}}" name="{{friend.memberID}}" [value]="friend.memberID"
+            [checked]="friend.hasShared|| false" (change)="friend.hasShared = !friend.hasShared" required />
+          {{friend.firstname}} {{friend.lastname}}
+        </label>
+      </span>
+      <textarea id="message" name="message" placeholder="Add message..." class="message" [(ngModel)]="addsharepost.message"
+        required></textarea>
+    </form>
+
+    <div class="panel panel-flat">
+      <div class="panel-heading">
+        <div class="media-left">
+          <a href="#"><img src="assets/images/59639c879aa65_team2.jpg" class="img-circle img-md" alt=""></a>
+        </div>
+        <div class="media-body">
+          {{post.author}}
+          <h6 class="panel-title" style="width: 83%">{{post.title}}</h6>
+
+          <div class="text-size-small" style="width: 83%">{{post.message}}{{post.description}}</div>
+        </div>
+
+      </div>
+      <div class="content-group" *ngIf="(post.description || post.message)" style="padding: 5px">
+        {{post.description}}
+        {{post.message}}
+      </div>
+      <div class="content-group" align="center">
+        <img src="{{post.thumbnail_url}}" class="img-responsive" alt="">
+      </div>
+      <div class="content-group" align="center" *ngIf="(post.post_type=='video')">
+        <video width="400" controls>
+          <source src="{{post.thumbnail_url}}" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="sharePost(post)" [disabled]="!shareMessageForm.form.valid">Share</button>
+    </div>
+  </div>

@@ -1,0 +1,205 @@
+<!-- Page container -->
+<div class="page-container" @page @imganimate>
+
+  <!-- Page content -->
+  <div class="page-content">
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+
+      <!-- User profile -->
+      <div class="row">
+        <div class="col-lg-9">
+
+
+          <!-- Course overview -->
+          <div class="panel panel-white">
+            <div class="panel-heading">
+              <h6 class="panel-title text-semibold">Publish articles </h6>
+
+              <div class="heading-elements">
+                <ul class="list-inline list-inline-separate heading-text">
+                  <li><span class="text-semibold">Drafts(0)</span></li>
+                  <li>
+
+                    <span style="cursor: pointer;" (click)="addCover()" class="position-right text-teal">{{buttonName}}</span>
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
+
+            <div class="panel-body">
+              <div class="row" *ngIf="defaultCover">
+
+                <div *blockUI="'cover'" class="col-md-12 no-margin">
+                  <div *ngIf="defaultFoto" class="caption text-center" style="min-height:250px; padding-top:50px; top:-40px; background-color:#ECECEC">
+                    <img (click)="Image.click()" src='assets/images/flat-icons/photo.png' style="width:90px" alt="">
+                    <h1 class="text-thin no-margin">Select a cover photo for your article</h1>
+                    <p class="text-muted mb-15 mt-5">Image size must not be more than 5MB.</p>
+                  </div>
+                  <div *ngIf="newCover" class="profile-cover-img container_img">
+                    <img (click)="Image.click()" [src]='defaultImage' class="img-responsive clsImg" />
+                    <button *ngIf="newCoverButton" (click)="removeNewCover()" class="btn"><i class="icon-trash"></i></button>
+                  </div>
+                  <div class="container_btn">
+                    <button *ngIf="defaultCoverButton" (click)="removeDefaultCover()" data-popup="tooltip" title="Remove cover"
+                      class="btn btn-xs"><i class="icon-cross"></i></button>
+                    <!--<button  *ngIf="defaultCoverButton" (click)="removeDefaultCover()" class="btn border-teal text-teal btn-flat btn-rounded btn-icon btn-xs"><i class="icon-cross"></i></button>-->
+                  </div>
+                </div>
+                <div class="row" style="display:none">
+                  <form>
+                    <div class="col-md-6 col-md-offset-3">
+                      <div class="form-group">
+                        <input style="display:none" type="file" #Image accept="image/*" (change)=handleFileInput($event.target.files)
+                          class="form-control" />
+                      </div>
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+
+
+
+              <div class="col-md-8 col-md-offset-2">
+                <form [formGroup]="addArticleForm" (ngSubmit)="postArticle()">
+                  <!--<input type="text" formControlName="memberID" id="memberID" [(ngModel)]="memberID"  class="form-control" />-->
+                  <input type="text" formControlName="title" id="title" class="form-control" />
+                  <input type="text" formControlName="author" id="author" [(ngModel)]="author" class="form-control" />
+                  <input type="hidden" formControlName="post_type" id="post_type" [(ngModel)]="post_type" class="form-control">
+                  <input type="hidden" formControlName="post_url" id="post_url" [(ngModel)]="post_url" class="form-control">
+                  <input type="hidden" formControlName="provider_url" id="provider_url" [(ngModel)]="provider_url"
+                    class="form-control">
+                  <input type="text" formControlName="provider_name" id="provider_name" [(ngModel)]="provider_name"
+                    class="form-control">
+                  <input type="text" formControlName="thumbnail_url" id="thumbnail_url" [(ngModel)]="result_image.filename"
+                    class="form-control">
+                  <input type="hidden" formControlName="html" class="form-control">
+
+
+                  <div class="form-group">
+                    <textarea formControlName="description" id="#description" class="form-control mb-15 wysihtml5 wysihtml5-min"
+                      rows="6" cols="1" placeholder="What's on your mind?"></textarea>
+                    <!--<span *ngIf="description.touched && description.invalid" class="help-block text-danger"> 
+                                <span *ngIf="description.errors.required" class="help-block text-danger"> This field is required</span>
+                                <span *ngIf="description.errors.maxlength" class="help-block text-danger"> Maximum charater is 200</span>
+                              </span>-->
+                  </div>
+
+
+
+                  <div class="col-xs-6 text-right">
+                    <input type="submit" class="btn btn-primary" value="Publish">
+
+                  </div>
+
+                </form>
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+        <!-- /course overview -->
+
+
+
+
+
+
+
+
+
+        <div class="col-lg-3">
+
+
+
+          <!-- articles -->
+          <div class="panel panel-white">
+            <div class="panel-heading border-bottom">
+              <h6 class="panel-title">Recent articles</h6>
+              <div class="heading-elements">
+                <span class="badge badge-success heading-text">+32</span>
+              </div>
+            </div>
+
+
+
+            <ul class="media-list media-list-linked pb-5">
+
+              <li class="media">
+                <a href="#" class="media-link">
+
+                  <div class="media-body">
+                    <span class="media-heading text-semibold text-teal">Javascript for beginners</span>
+                    <span class="media-annotation">(200 views)</span>
+                  </div>
+                  <div class="media-right media-middle">
+
+                  </div>
+                </a>
+              </li>
+
+              <li class="media">
+                <a href="#" class="media-link">
+
+                  <div class="media-body">
+                    <span class="media-heading text-semibold text-teal">Ways to Find the Nelson Mandela</span>
+                    <span class="media-annotation">(10 views)</span>
+                  </div>
+                  <div class="media-right media-middle">
+
+                  </div>
+                </a>
+              </li>
+
+              <li class="media">
+                <a href="#" class="media-link">
+
+                  <div class="media-body">
+                    <span class="media-heading text-semibold text-teal">How to manage cultural change</span>
+                    <span class="media-annotation">(35560 views)</span>
+                  </div>
+                  <div class="media-right media-middle">
+
+                  </div>
+                </a>
+              </li>
+
+              <li class="media">
+                <a href="#" class="media-link">
+
+                  <div class="media-body">
+                    <span class="media-heading text-semibold text-teal">Field Data Collection Made</span>
+                    <span class="media-annotation">(2003 views)</span>
+                  </div>
+                  <div class="media-right media-middle">
+
+                  </div>
+                </a>
+
+            </ul>
+          </div>
+          <!-- /connections -->
+
+          <img src="assets/images/sample-logos/banner-1.jpg" class="" alt="">
+
+        </div>
+      </div>
+      <!-- /user profile -->
+
+    </div>
+    <!-- /main content -->
+
+  </div>
+  <!-- /page content -->
+
+</div>
+<!-- /page container -->

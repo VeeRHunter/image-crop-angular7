@@ -1,0 +1,185 @@
+<!-- User profile -->
+<div class="row">
+  <div class="col-lg-8">
+
+    <!-- Cover area -->
+    <div class="profile-cover">
+      <div class="profile-cover-img" style="height:250px;">
+        <slim [options]="coverImageSlimOptions">
+          <input type="file" name="foo"></slim>
+      </div>
+      <div class="media">
+        <div class="media-left">
+          <div style="width: 120px; height: 120px">
+            <slim [options]="profileImageSlimOptions"></slim>
+          </div>
+
+        </div>
+
+        <div class="media-body">
+          <h1>{{firstname}} {{lastname}} <small class="display-block">UX/UI designer</small></h1>
+        </div>
+        <div class="slim" data-min-size="900,400">
+          <img src="./media/dune.jpg" alt="" />
+        </div>
+        <div class="media-right media-middle">
+          <ul class="list-inline list-inline-condensed no-margin-bottom text-nowrap">
+            <!-- <li><a href="#" class="btn btn-default"><i class="icon-file-picture position-left"></i> Cover image</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /cover area -->
+
+
+    <!-- Toolbar -->
+    <div class="navbar navbar-default navbar-xs navbar-component no-border-radius-top">
+      <ul class="nav navbar-nav visible-xs-block">
+        <li class="full-width text-center"><a data-toggle="collapse" data-target="#navbar-filter"><i class="icon-menu7"></i></a></li>
+      </ul>
+
+      <div class="navbar-collapse collapse" id="navbar-filter">
+        <ul class="nav navbar-nav">
+
+          <li routerLinkActive="active current"><a [routerLink]="['/company/admin/home', 1938]"><i class="icon-office position-left"></i>
+              About us <span class="badge badge-success badge-inline position-right">3</span></a></li>
+          <li routerLinkActive="active current"><a [routerLink]="['/company/admin/updates', 1938]"><i class="icon-graduation2 position-left"></i>
+              Updates </a></li>
+          <li routerLinkActive="active current"><a [routerLink]="['/company/admin/careers', 1938]"><i class="icon-briefcase position-left"></i>
+              careers </a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-stats-bars2 position-left"></i>
+              Statistics<span class="visible-xs-inline-block position-right"> Options</span> <span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li routerLinkActive="active current"><a [routerLink]="['/Update', 1938]"><i class="icon-graduation2 position-left"></i>
+                  Follows </a></li>
+              <li routerLinkActive="active current"><a [routerLink]="['/profile/project']"><i class="icon-presentation"></i>
+                  Visitor</a></li>
+              <li routerLinkActive="active current"><a [routerLink]="['/profile/award']"><i class="icon-trophy2"></i>
+                  Posts</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="navbar-right navbar-collapse collapse" id="navbar-filter">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-gear position-left"></i>
+                Settings<span class="visible-xs-inline-block position-right"> Options</span> <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-menu-right">
+
+                <li routerLinkActive="active current"><a [routerLink]="['/profile/certification']"><i class="icon-user"></i>
+                    Manage page admin</a></li>
+                <li routerLinkActive="active current"><a [routerLink]="['/profile/project']"><i class="icon-presentation"></i>
+                    Manage product</a></li>
+                <li routerLinkActive="active current"><a [routerLink]="['/profile/award']"><i class="icon-trophy2"></i>
+                    Add a branch</a></li>
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /toolbar -->
+
+
+    <div class="tabbable">
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+
+
+  <div class="col-lg-4">
+
+    <!-- Invitation stats white -->
+    <div class="panel text-center bg-grey-400 has-bg-image">
+      <div class="panel-body">
+        <agm-map [latitude]="lat" [longitude]="lng">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+      </div>
+
+      <div class="panel-body panel-body-accent pb-15">
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="text-uppercase text-size-mini opacity-75">Followers</div>
+            <h5 class="text-semibold no-margin">2,483</h5>
+          </div>
+
+          <div class="col-xs-3">
+            <div class="text-uppercase text-size-mini opacity-75">Contacts</div>
+            <h5 class="text-semibold no-margin">1,257</h5>
+          </div>
+
+          <div class="col-xs-5">
+            <div class="text-uppercase text-size-mini opacity-75">&nbsp;&nbsp;Profile Views</div>
+            <h5 class="text-semibold no-margin">8,472</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /invitation stats white -->
+
+    <!-- Sidebar search -->
+
+    <div class="panel panel-white">
+      <div class="panel-heading">
+        <div class="panel-title text-semibold">
+          <i class="icon-search4 text-size-base position-left"></i>
+          Ads
+        </div>
+      </div>
+
+      <div class="panel-body">
+
+        Adverts here<img src="assets/images/300x250.png" />
+      </div>
+    </div>
+    <!-- /sidebar search -->
+
+    <!-- Sidebar search -->
+    <div class="panel panel-white">
+      <div class="panel-heading">
+        <div class="panel-title text-semibold">
+          <i class="icon-search4 text-size-base position-left"></i>
+          Ads
+        </div>
+      </div>
+
+      <div class="panel-body">
+
+        Adverts here
+
+      </div>
+    </div>
+    <!-- /sidebar search -->
+
+    <!-- Sidebar search -->
+    <div class="panel panel-white">
+      <div class="panel-heading">
+        <div class="panel-title text-semibold">
+          <i class="icon-search4 text-size-base position-left"></i>
+          Ads
+        </div>
+      </div>
+
+      <div class="panel-body">
+
+        Adverts here
+
+      </div>
+    </div>
+    <!-- /sidebar search -->
+
+
+
+
+
+
+
+  </div>
+</div>
+<!-- /user profile -->

@@ -1,0 +1,63 @@
+<!-- Available hours -->
+<div class="panel panel-white">
+  <div class="panel-heading">
+    <h6 class="panel-title">My Skills</h6>
+    <div class="heading-elements">
+      <ul class="icons-list">
+        <!-- <li><a data-action="collapse"></a></li> -->
+        <!-- <li><a data-action="reload"></a></li> -->
+        <!-- <li><a data-action="close"></a></li> -->
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <div class="chart-container">
+      <div class="chart has-fixed-height" id="plans">
+        <span *ngIf="error" class="text-danger">{{error}}</span>
+        <form [formGroup]="addSkillForm" (ngSubmit)="addSkill(addSkillForm.value)">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-3">
+                <input type="hidden" placeholder="Skill" class="form-control" formControlName="memberID">
+                <input type="text" placeholder="Skill" class="form-control" formControlName="skill_title">
+              </div>
+              <div class="col-sm">
+                <button type="submit" class="btn btn-info" [disabled]="!addSkillForm.valid || isAddSkillFormSubmitted">
+                  <span *ngIf="!isAddSkillFormSubmitted;else show_adding_skill">
+                    Add Skill
+                  </span>
+                  <ng-template #show_adding_skill>Adding skill. Please wait...</ng-template>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <span class="text-warning">Click on any skill to remove</span><br /><br />
+        <button *ngFor="let skill of skill_list" type="button" class="btn btn-info skill-btn" (click)="deleteSkill(skill)"><strong>{{skill}}</strong></button>
+        <!-- Default usage -->
+        <div class="content-group">
+          <h6 class="text-semibold">Default usage</h6>
+          <p>Tags input is a simple and flexible extension with plenty of useful features and support of Twitter
+            Typeahead library. To initialize tags input, you can use both javascript and data attributes.</p>
+
+          <div class="content-group">
+            <input type="text" value="Amsterdam,Washington,Sydney,Beijing" class="tags-input">
+          </div>
+
+          <div class="content-group">
+            <div class="mb-5">Returned values</div>
+            <pre class="val"><code class="language-javascript">"Amsterdam,Washington,Sydney,Beijing"</code></pre>
+          </div>
+
+          <div class="content-group-lg">
+            <div class="mb-5">Returned items</div>
+            <pre class="items"><code class="language-javascript">["Amsterdam","Washington","Sydney","Beijing"]</code></pre>
+          </div>
+        </div>
+        <!-- /default usage -->
+
+      </div>
+    </div>
+  </div>
+</div>

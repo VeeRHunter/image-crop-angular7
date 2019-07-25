@@ -1,0 +1,195 @@
+<!-- User profile -->
+<div class="row">
+  <div class="col-lg-12">
+
+    <!-- Course overview -->
+    <div class="panel panel-flat">
+      <div class="panel-heading">
+        <h6 class="panel-title text-semibold">About us 2nd&deg; </h6>
+      </div>
+      <div class="panel-body">
+
+        <!-- about us -->
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-9">
+              <label class="text-semibold">Description</label>
+              <textarea name="description" class="form-control mb-15" rows="5" placeholder="Describe your company here"></textarea>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="text-semibold">Industry</label>
+                <select data-placeholder="Select type..." class="select">
+                  <option>Select industry</option>
+                  <option *ngFor='let industry of industrylist' value='{{industry}}'>{{industry}}</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="text-semibold">Company Type</label>
+                <select data-placeholder="Select type..." class="select">
+                  <option>Partnership</option>
+                  <option>Enterprenuer</option>
+                  <option value="AZ">Public Liability</option>
+                  <option value="CO">Government Agency</option>
+                  <option value="ID">Educational Institute</option>
+                  <option value="WY">Non-Governmental</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="text-semibold">Company size</label>
+                <select data-placeholder="Select type..." class="select">
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-100">51-100</option>
+
+                </select>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-5">
+              <label class="text-semibold">Company website</label>
+              <input type="text" placeholder="(e.g http://www.companyname.com)" class="form-control">
+            </div>
+
+
+
+            <div class="col-sm-4">
+              <label class="text-semibold">Year of establishment</label>
+              <input type="text" placeholder="2001" class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-10">
+              <label class="text-semibold">Full Address</label>
+              <button type="button" data-toggle="modal" data-target="#modal_theme_add_locations" class="btn btn-info btn-rounded btn-sm position-right"><b><i
+                    class="icon-pin-alt"></i></b> Add new branch</button>
+              <input type="text" placeholder="(e.g 7, Adetokunbo Ademola street off allen avenue ikeja, Lagos, Nigeria)"
+                class="form-control">
+            </div>
+
+
+
+
+          </div>
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-info">Save changes</button>
+        </div>
+
+
+
+      </div>
+
+    </div>
+    <!-- /course overview -->
+
+  </div>
+
+
+
+
+
+
+
+
+</div>
+<!-- /user profile -->
+
+
+<!-- add company location modal -->
+<div id="modal_theme_add_locations" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-info">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h6 class="modal-title">Add Location</h6>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-12">
+              <label class="text-semibold">Address</label>
+              <input type="text" placeholder="" class="form-control">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-4">
+              <label class="text-semibold">City</label>
+              <input type="text" placeholder="" class="form-control">
+            </div>
+            <div class="col-sm-4">
+              <label class="text-semibold">State/Province</label>
+              <input type="text" placeholder="" class="form-control">
+            </div>
+            <div class="col-sm-4">
+              <label class="text-semibold">Zip/Postal code</label>
+              <input type="text" placeholder="" class="form-control">
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="text-semibold">Country</label>
+                <select data-placeholder="Select type..." class="select">
+                  <option>Select country</option>
+                  <option *ngFor='let country of countries' value='{{country.name.common}}'>{{country.name.common}}</option>
+                </select>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" required ngModel name="isAgree" /> &nbsp;&nbsp; Make head office
+        </div>
+
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-info">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /add company location modal -->

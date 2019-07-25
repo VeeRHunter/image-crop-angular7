@@ -1,0 +1,119 @@
+<navbar></navbar>
+<router-outlet></router-outlet>
+
+<div *ngIf="isLoggedIn$ | async" class="chatbox chatbox--tray chatbox--empty">
+    <div class="chatbox__title">
+        <h5><a href="#">New messages</a></h5>
+        <button class="chatbox__title__tray">
+            <span></span>
+        </button>
+        <button class="chatbox__title__close">
+            <span>
+                <svg viewBox="0 0 12 12" width="12px" height="12px">
+                    <line stroke="#FFFFFF" x1="11.75" y1="0.25" x2="0.25" y2="11.75"></line>
+                    <line stroke="#FFFFFF" x1="11.75" y1="11.75" x2="0.25" y2="0.25"></line>
+                </svg>
+            </span>
+        </button>
+    </div>
+
+    <div class="category-content" style="height:500px; overflow:auto; background-color:#ECECEC">
+        <ul class="media-list">
+            <li class="media">
+                <a href="#" class="media-left"><img src="assets/images/59639c879aa65_team2.jpg" class="img-sm img-circle"
+                        alt=""></a>
+                <div class="media-body">
+                    <span class="media-heading text-bold">James Alexander</span>
+                    <span class="media-annotation">Sales Manager</span>
+                </div>
+                <div class="media-right media-middle">
+                    <span class="status-mark bg-success"></span>
+                </div>
+            </li>
+            <li class="media">
+                <a href="#" class="media-left"><img src="assets/images/6.jpg" class="img-sm img-circle" alt=""></a>
+                <div class="media-body">
+                    <span class="media-heading text-bold">Jeremy Victorino</span>
+                    <span class="text-size-mini text-muted display-block">Dowagiac, MI.</span>
+
+                </div>
+                <div class="media-right media-middle">
+                    <a href="#"><span class="label label-danger pull-right">2</span></a>
+                </div>
+            </li>
+            <li class="media">
+                <a href="#" class="media-left"><img src="assets/images/16.jpg" class="img-sm img-circle" alt=""></a>
+                <div class="media-body">
+                    <span class="media-heading">Margo Baker</span>
+                    <span class="text-size-mini text-muted display-block">Kasaan, AK.</span>
+                </div>
+                <div class="media-right media-middle">
+                    <span class="status-mark border-success"></span>
+                </div>
+            </li>
+            <li class="media">
+                <a href="#" class="media-left"><img src="assets/images/5863cb5a7e3f0_why-you-should-consider-dating-african-girls.jpg"
+                        class="img-sm img-circle" alt=""></a>
+                <div class="media-body">
+                    <span class="media-heading text-semibold">Beatrix Diaz</span>
+                    <span class="text-size-mini text-muted display-block">Neenah, WI.</span>
+                </div>
+                <div class="media-right media-middle">
+                    <span class="status-mark border-warning"></span>
+                </div>
+            </li>
+            <li class="media">
+                <a href="#" class="media-left"><img src="assets/images/5863c7afb5bcb_black-woman-thinking.-pf.jpg"
+                        class="img-sm img-circle" alt=""></a>
+                <div class="media-body">
+                    <span class="media-heading text-semibold">Richard Vango</span>
+                    <span class="text-size-mini text-muted display-block">Grapevine, TX.</span>
+                </div>
+                <div class="media-right media-middle">
+                    <span class="status-mark border-grey-400"></span>
+                </div>
+            </li>
+            <li class="media">
+                <a href="#" class="media-left"><img src="assets/images/59639c879aa65_team2.jpg" class="img-sm img-circle"
+                        alt=""></a>
+                <div class="media-body">
+                    <span class="media-heading text-semibold">James Alexander</span>
+                    <span class="text-size-mini text-muted display-block">Santa Ana, CA.</span>
+                </div>
+                <div class="media-right media-middle">
+                    <span class="status-mark border-success"></span>
+                </div>
+            </li>
+            <li class="media">
+                <a href="#" class="media-left"><img src="assets/images/6.jpg" class="img-sm img-circle" alt=""></a>
+                <div class="media-body">
+                    <span class="media-heading text-semibold">Jeremy Victorino</span>
+                    <span class="text-size-mini text-muted display-block">Dowagiac, MI.</span>
+                </div>
+                <div class="media-right media-middle">
+                    <span class="status-mark border-danger"></span>
+                </div>
+            </li>
+            <li class="media">
+                <a class="media-left"><img src="assets/images/59639c879aa65_team2.jpg" class="img-sm img-circle" alt=""></a>
+                <div class="media-body">
+                    <span href="#" class="media-heading text-semibold">James Alexander</span>
+                    <span class="text-size-mini text-muted display-block">Santa Ana, CA.</span>
+                </div>
+                <div class="media-right media-middle">
+                    <span class="status-mark border-success"></span>
+                </div>
+            </li>
+            <li class="media">
+                <a href="#" class="media-left"><img src="assets/images/6.jpg" class="img-sm img-circle" alt=""></a>
+                <div class="media-body">
+                    <span class="media-heading text-semibold">Jeremy Victorino</span>
+                    <span class="text-size-mini text-muted display-block">Dowagiac, MI.</span>
+                </div>
+                <div class="media-right media-middle">
+                    <span class="status-mark border-danger"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

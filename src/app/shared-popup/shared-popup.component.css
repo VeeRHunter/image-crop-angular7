@@ -1,0 +1,16 @@
+.remove {
+    font-size: 25px;
+    color: red;
+}
+
+.button {
+    background-color: white;
+    border: none;
+}
+
+.message {
+    width: 90%;
+    padding-bottom: 20px;
+    margin: 20px;
+    border: none;
+}

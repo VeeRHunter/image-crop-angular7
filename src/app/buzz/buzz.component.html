@@ -1,0 +1,636 @@
+<!-- Page container -->
+<div class="page-container page-margin" @page @imganimate>
+    <!-- Page content -->
+    <div class="page-content">
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main sidebar-default sidebar-separate">
+
+            <div class="sidebar-content sticky has-bg-image">
+
+                <ngx-spinner></ngx-spinner>
+                <!-- User details (with sample pattern) -->
+                <div class="content-group">
+                    <div class="panel-body bg-grey border-radius-top text-center" style="background-image: url(http://demo.interface.club/limitless/assets/images/bg.png); background-size: contain;">
+                        <div *ngIf="userDetails" class="content-group-sm" style="color:#EEEEEE">
+                            <h5 class="text-semibold no-margin-bottom">
+                                {{userDetails.firstname}} {{userDetails.lastname}}
+
+                            </h5>
+                            {{userDetails.current_position}}@ {{userDetails.current_employer}}
+                        </div>
+
+                        <a href="#" class="display-inline-block content-group-sm">
+                            <img src="http://178.62.74.44/uploads/profile/{{userDetails.avatar}}" (error)="onError()"
+                                class="img-circle img-responsive" style="width: 120px; height: 120px; border:2px solid #EEEEEE"
+                                alt="" />
+                        </a>
+
+
+                        <div class="slim" data-min-size="900,400">
+                            <img src="./media/dune.jpg" alt="" />
+                        </div>
+
+                        <ul class="list-inline no-margin-bottom">
+                            <li><span class="display-block"></span></li>
+                        </ul>
+                    </div>
+
+                    <div class="panel no-border-top no-border-radius-top" style="margin-top:-10px">
+                        <!--
+                            <div class="text-center">
+                                <h5 class="text-center pt-10">Profile Meter</h5>
+                                <ngx-gauge [type]="gaugeType" 
+                                        [value]="gaugeValue" 
+                                        [size]="gaugeSize"
+                                        [foregroundColor]="guageForegroundColor"
+                                        [label]="gaugeLabel"
+                                        [thick]="gaugeThick"  
+                                        [cap]="gaugeCap"   
+                                        [append]="gaugeAppendText">
+                                </ngx-gauge>
+                        </div>
+                        -->
+                        <div style="border-top:1px solid #ECECEC">
+                            <div class="m-20 text-center">
+                                <h5>Profile views <small class="text-muted text-size-base"> (36)</small></h5>
+                            </div>
+                            <div class="text-center text-muted text-size-small">
+
+                                <span>Last 30 days &nbsp; &nbsp; <small class="text-danger text-size-base"><i class="icon-arrow-down12"></i>
+                                        (+1.2%)</small></span>
+                            </div>
+
+                            <div *ngIf="update" class="text-center mb-15 mt-10">
+                                <p class="text-muted text-sm">Attract more visitors to your page</p>
+                                <a class="btn btn-info btn-rounded" routerLink="/profile/dashboard">Improve profile</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /user details (with sample pattern) -->
+
+
+
+
+
+
+            </div>
+
+        </div>
+        <!-- /main sidebar -->
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-opposite sidebar-default sidebar-separate">
+            <div class="sticky">
+                <div class="sidebar-content">
+
+                    <!-- Latest updates -->
+                    <div class="sidebar-category">
+                        <div class="category-title">
+                            <span>Latest updates</span>
+                            <ul class="icons-list">
+                                <li>
+                                    <a href="#" data-action="collapse"></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="category-content">
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i
+                                                class="icon-git-pull-request"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        Drop the IE <a href="#">specific hacks</a> for temporal inputs
+                                        <div class="media-annotation">4 minutes ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i
+                                                class="icon-git-commit"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        Add full font overrides for popovers and tooltips
+                                        <div class="media-annotation">36 minutes ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i
+                                                class="icon-git-branch"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span>
+                                        branch
+                                        <div class="media-annotation">2 hours ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i
+                                                class="icon-git-merge"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span>
+                                        and <span class="text-semibold">Dev</span> branches
+                                        <div class="media-annotation">Dec 18, 18:36</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i
+                                                class="icon-git-pull-request"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        Have Carousel ignore keyboard events
+                                        <div class="media-annotation">Dec 12, 05:46</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /latest updates -->
+
+                </div>
+            </div>
+        </div>
+        <!-- /main sidebar -->
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Grid -->
+            <div class="row">
+                <div class="col-md-8">
+
+
+                    <div *ngIf="gaugeValue <= 85" class="panel-body bg-info border-radius-top" style="background-image: url(http://demo.interface.club/limitless/assets/images/bg.png); background-size: contain;">
+                        <div class="col-md-3 mr-20 text-center">
+                            <h5 class="text-center mb-20">Profile Meter</h5>
+                            <ngx-gauge [type]="gaugeType" [value]="gaugeValue" [size]="gaugeSize" [foregroundColor]="guageForegroundColor"
+                                [backgroundColor]="guageBackgroundColor" [label]="gaugeLabel" [thick]="gaugeThick"
+                                [cap]="gaugeCap" [append]="gaugeAppendText">
+                            </ngx-gauge>
+                        </div>
+
+                        <div class="col-md-8 ml-20">
+                            <h5><i class="icon-plus3"></i> Add work experience</h5>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control form-rounded bg-info-300 border-info-600"
+                                    placeholder=" Job title" formControlName="email">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control form-rounded bg-info-300 border-info-600"
+                                    placeholder=" Current employer" formControlName="email">
+                            </div>
+
+                            <div class="col-xs-12 text-right">
+                                <button class="btn bg-slate btn-rounded">&nbsp; Next &nbsp;</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!--<embed src="/assets/uploads/profile.pdf" type="application/pdf" width="50%" height="200px" />-->
+
+                    <!--<app-thought></app-thought>-->
+
+                    <!-- Share your thoughts -->
+
+
+
+                    <div class="panel panel-flat fade in">
+                        <div class="panel-heading">
+
+                            <div class="heading-elements">
+                                <ul class="icons-list">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="icon-plus"></i>
+                                        </a>
+
+
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="#"><i class="icon-popout"></i> Notifications</a></li>
+                                            <li><a href="#"><i class="icon-embed"></i> Embed video</a></li>
+                                            <li><a href="#"><i class="icon-pin-alt"></i> Show location</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#"><i class="icon-cog3"></i> Settings</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="panel-body">
+
+                            <!-- Tabs with bottom line -->
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel panel-flat" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+                                        <div class="panel-heading">
+                                            <div class="heading-elements">
+                                                <ul class="icons-list">
+                                                    <li>
+                                                        <a data-action="close"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body" style="margin-bottom:-50px">
+                                            <div class="tabbable" style="position:relative; top:-20px">
+
+                                                <button type="button" class="btn btn-default btn-rounded btn-sm"
+                                                    (click)="thought()"><i class="icon-brain position-left"></i>Share
+                                                    an idea</button>
+                                                <button type="button" class="btn btn-default btn-rounded btn-sm"
+                                                    (click)="link()"><i class="icon-link position-left"></i>Share a
+                                                    link</button>
+                                                <button type="button" class="btn btn-default btn-rounded btn-sm"
+                                                    (click)="Image.click()"><i class="icon-camera position-left"></i>
+                                                    Photo</button>
+                                                <button type="button" class="btn btn-default btn-rounded btn-sm"
+                                                    (click)="Video.click()"><i class="icon-video-camera3 position-left"></i>
+                                                    Video</button>
+                                                <br><br>
+                                                <div (click)="thought()">
+
+                                                    <div class="media-left" *ngIf="showAvatar"> <img src="http://178.62.74.44/uploads/profile/{{userDetails.avatar}}"
+                                                            (error)="onError()" class="img-circle img-md" alt="" /></div>
+
+                                                    <div class="media-body">
+                                                        <span *ngIf="showPlaceHolder" class="media-heading text-light"
+                                                            style="font-size:16px; position:relative; top:5px">Say
+                                                            what's on your mind !...</span>
+                                                        <!--<span *ngIf="showPlaceHolder" class="media-heading text-light" style="font-size:16px; position:relative; top:5px">Share link ...</span>
+                                                        <span *ngIf="showPlaceHolder" class="media-heading text-light" style="font-size:16px; position:relative; top:5px">Share photo !...</span>
+                                                        <span *ngIf="showPlaceHolder" class="media-heading text-light" style="font-size:16px; position:relative; top:5px">Share link !...</span>-->
+                                                        <app-thought [showMeThought]="showThought"></app-thought>
+                                                        <app-embedly [showMeLink]="showLink"></app-embedly>
+                                                        <app-photo-post [showMePhoto]="showPhoto" [previewImage]="defaultImage"
+                                                            [thumbnail_url]="result_image"></app-photo-post>
+                                                        <app-video-post [showPreloaderVideo]="showPreloader"
+                                                            [showMeVideo]="showVideo" [previewVideo]="defaultVideo"
+                                                            [poster_url]="result_video"></app-video-post>
+                                                    </div>
+
+                                                </div>
+
+                                                <form>
+                                                    <div class="col-md-6 col-md-offset-3">
+                                                        <div class="form-group">
+                                                            <input style="display:none" type="file" multiple #Image
+                                                                accept="image/*" (change)=handleImageInput($event.target.files)
+                                                                class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                                <form>
+                                                    <div class="col-md-6 col-md-offset-3">
+                                                        <div class="form-group">
+                                                            <input style="display:none" type="file" multiple #Video
+                                                                accept="video/*" (change)=handleVideoInput($event.target.files)
+                                                                class="form-control" />
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                                <div *blockUI="'cover'">
+                                                    <ngx-spinner></ngx-spinner>
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                            <!-- /tabs with bottom line -->
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- /share your thoughts -->
+
+
+                    <ng-template #other_content></ng-template>
+                    <div detect-scroll (onScroll)="handleScroll($event)" [bottomOffset]="1" [topOffset]="200">
+                        <div class="panel panel-flat" *ngFor="let post of postModel">
+                            <div class="panel-heading">
+                                <div class="media-left">
+                                    <a href="#"><img src="{{post.author_position}}" class="img-circle img-md" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <b>{{post.author_avatar}}</b>
+                                    <div class="text-size-small text-muted" style="width: 83%">{{post.author}}</div>
+                                </div>
+                                <div class="heading-elements">
+                                    <ul class="icons-list">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                <i class="icon-menu"></i>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a href="#"><i class="icon-popout"></i> Notifications</a></li>
+                                                <li><a href="#"><i class="icon-embed"></i> Embed video</a></li>
+                                                <li><a href="#"><i class="icon-pin-alt"></i> Show location</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#"><i class="icon-cog3"></i> Settings</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="content-group" *ngIf="(post.description || post.message)" style="padding: 10px">
+                                <div *ngIf="(post.feedType=='link')" class="media-body" style="align:left; padding-bottom:5px">
+                                    <a href="" class="panel-title text-semibold" style="width: 90%">{{post.title}}</a>
+                                    <div class="text-size-small" style="width: 83%">{{post.provider_name}}</div>
+                                </div>
+                                {{post.description}}
+                                {{post.message}}
+                            </div>
+                            <div class="content-group">
+                                <img src="{{post.thumbnail_url}}" class="img-responsive" alt="">
+                                <div class="panel-footer panel-footer-transparent" style="background-color:#F1F1F1; align:left; padding:10px">
+                                    <ul class="list-inline heading-text">
+                                        <li class="text-muted" style="margin-left: 12px; font-size:12px">
+                                            {{post.likeCount}} 1021 Likes
+                                        </li>
+                                        <li class="text-muted" style="margin-left: 10px; font-size:12px">{{comment_count}}
+                                            Comments</li>
+                                        <li class="text-muted" style="margin-left: 10px; font-size:12px">if article
+                                            show views</li>
+                                        <li class="text-muted" style="margin-left: 10px; font-size:12px">12 Share</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+
+                            <div class="content-group" align="center" *ngIf="(post.post_type=='video')">
+                                <video width="400" src="{{post.thumbnail_url}}" type="video/mp4"></video>
+                                <div class="controls">
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="panel-footer panel-footer-transparent">
+                                <div class="heading-elements">
+                                    <ul class="list-inline heading-text">
+                                        <li>
+                                            <a (click)="likePost(post)" class="text-grey-600">
+                                                <i class="icon icon-thumbs-up3 text-grey-400 position-left text-semibold"
+                                                    [class.highlighted]="post.isLiked"></i>
+                                                <b>Like</b>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a (click)="showComment(post)" class="text-grey-600" text-semibold><i class="icon-comment text-grey-400 position-left"></i>
+                                                <b>Comment</b></a>
+                                        </li>
+                                        <li><a (click)="showShared(post)" class="text-grey-600"><i class="icon-share3 text-grey-400 position-left"></i><b>Share</b></a></li>
+
+                                    </ul>
+                                    <!-- <ul class="list-inline heading-text">
+                    <li><span class="text-default"><follow [isFollow]="post.isFollow" (change)="onLikeChanged($event)"></follow></span></li>
+                  </ul> -->
+                                    <!-- <a href="#" class="heading-text pull-right">Full article <i class="icon-circle-right2 position-right"></i></a> -->
+                                </div>
+                            </div>
+                            <div style="background-color:#F6FAFB" class="panel-body" id="{{post.postID}}" *ngIf="post.showComment">
+
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img src="{{imageUrl1}}" class="img-circle img-xs" alt=""></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <form #commentForm=ngForm>
+                                            <textarea class="form-control form-rounded" id="comment" name="comment"
+                                                rows="1" autosize placeholder="Add comment..." [(ngModel)]="post.commentStr"
+                                                required></textarea>
+                                            <!--<input id="comment" name="comment"  placeholder="Add comment..." class="form-control" type="text" [(ngModel)]="post.commentStr" required>-->
+                                            <button type="button" id="btnPost" (click)="addComment(post)" class="btn btn-primary"
+                                                [disabled]="!commentForm.form.valid">Post</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!--Comments-->
+                                <div class="media text-comment-margin" *ngFor="let com of post.commentsModel">
+                                    <div class="media-left">
+                                        <a href="#"><img src="{{com.fullname}}" class="img-circle img-xs" style="width:60px"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="media-body">
+
+                                        <span class="text-size-small text-bold">{{com.avatar}}</span>
+                                        <h6 class="media-heading text-size-small text-semibold letter-icon-title"><span
+                                                class="media-annotation pull-right"> {{com.comment_date |
+                                                relativeTime}}</span></h6>
+                                        <span class="media-annotation text-comments ">{{com.comment_text}}</span>
+                                        <ul class="list-inline mt-5">
+                                            <li style="margin-left: 0px;">
+                                                <a (click)="likeCommnet(com)" class="text-grey-600 text-size-small text-muted">
+                                                    {{com.likeCount}}
+                                                    <i class="icon icon-thumbs-up3 text-grey-400 position-left text-size-small"
+                                                        [class.highlighted]="com.isLiked"></i>
+                                                </a>
+
+
+                                                <a (click)="showReplies(com)" class="text-size-small text-grey-400"
+                                                    text-semibold>Reply<i class="icon-reply text-grey-400 position-right text-semibold"></i></a>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-size-small text-muted"
+                                                    href="#">5 Likes &nbsp; | &nbsp; 12 Replies</span>
+
+
+                                                <!--Replies start-->
+                                                <div style="background-color:#F6FAFB" class="panel-body" id="{{com.commentID}}"
+                                                    *ngIf="com.showReply">
+
+                                                    <div class="media">
+                                                        <div class="media-left">
+                                                            <a href="#"><img src="{{imageUrl1}}" class="img-circle reply-avatar"
+                                                                    alt=""></a>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <form #replyForm=ngForm>
+                                                                <textarea class="form-control" id="comment" name="comment"
+                                                                    rows="1" autosize placeholder="Add comment..."
+                                                                    [(ngModel)]="post.commentStr" required></textarea>
+                                                                <!--<input id="comment" name="comment"  placeholder="Add comment..." class="form-control" type="text" [(ngModel)]="post.commentStr" required>-->
+                                                                <button type="button" id="btnPost" (click)="addComment(post)"
+                                                                    class="btn btn-primary" [disabled]="!commentForm.form.valid">Post</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="media text-reply-margin" *ngFor="let com of post.commentsModel">
+                                                        <div class="media-left">
+
+                                                            <a href="#"><img src="{{com.fullname}}" class="img-circle reply-avatar"
+                                                                    alt=""></a>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <span class="text-size-small text-bold">{{com.avatar}}</span>
+                                                            <h6 class="media-heading text-size-small text-semibold letter-icon-title"><span
+                                                                    class="media-annotation pull-right">
+                                                                    {{com.comment_date | relativeTime}}</span></h6>
+                                                            <span class="media-annotation text-comments ">{{com.comment_text}}</span>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <!--Replies End-->
+
+                                            </li>
+
+                                            <!-- <li><like [isLiked]="false" [likeCount]="89"></like></li>
+                      <li>89 <a href="#"><i class="icon-arrow-up22 text-success"></i></a><a href="#"><i class="icon-arrow-down22 text-danger"></i></a></li> -->
+                                            <!-- <li><a href="#">Reply</a></li>
+                      <li><a href="#">Edit</a></li> -->
+                                        </ul>
+
+                                    </div>
+
+
+                                </div>
+                                <!--End Comments-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showLoader" class="loader">Loading...</div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <!-- Connections -->
+
+                    <div class="panel panel-flat">
+
+
+                        <div class="category-title">
+                            <span>People you may know</span>
+                        </div>
+
+                        <div *ngIf="peoplemayknow.length > 0">
+                            <ul class="media-list media-list-linked pb-5" style="z-index: -1">
+
+                                <li (click)="onSelectMember(pub)" *ngFor="let people of peoplemayknow; let i = index;"
+                                    class="media">
+                                    <span *ngIf="friendViewmode === true || (friendViewmode == false && i < 3)" href="#"
+                                        class="media-link">
+
+                                        <div style="margin-left:-20px;" [popover]="myPopover" [popoverOnHover]="true"
+                                            [popoverCloseOnMouseOutside]="true" [popoverAnimation]="true">
+                                            <div class="media-left" style="padding-left:15"><img src="http://178.62.74.44/uploads/profile/{{people.avatar}}"
+                                                    (error)="onError()" class="img-circle img-md" alt=""></div>
+                                            <div class="media-body">
+                                                <span class="media-heading text-semibold">{{people.name}}</span>
+                                                <span class="media-annotation">{{people.memberID}}</span>
+                                            </div>
+                                            <div class="media-right media-middle">
+                                                <span class="status-mark bg-success"></span>
+                                            </div>
+                                        </div>
+
+
+
+                                        <popover-content #myPopover placement="left" [animation]="true"
+                                            [closeOnMouseOutside]="true" [closeOnClickOutside]="true">
+
+                                            <div class="media-left"><img src="http://178.62.74.44/uploads/profile/{{people.avatar}}"
+                                                    (error)="onError()" class="img-circle img-md" alt=""></div>
+
+                                            <div class="media-body">
+                                                <span class="media-heading text-semibold">
+                                                    <h5> {{userDetails.firstname}} {{userDetails.lastname}} </h5>
+                                                </span>
+                                                <span class="media-annotation"> {{userDetails.current_position}}@
+                                                    {{userDetails.current_employer}}</span>
+
+
+                                            </div>
+                                            Hello there! I was triggered by changing isOpen property
+                                            Hello there! I was triggered by changing isOpen propertyHello there! I was
+                                            triggered by changing isOpen property
+
+                                        </popover-content>
+
+
+
+
+                                    </span>
+                                </li>
+
+
+                            </ul>
+                            <div *ngIf="peoplemayknow.length > 3 && peoplemayknow === false" class="panel-footer no-padding">
+                                <button type="button" (click)="viewMoreFriends()" class="btn btn-default btn-block no-border">See
+                                    more people you know</button>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- /connections -->
+
+
+                    <!-- Advert users -->
+                    <div class="sidebar-fixed">
+                        <img src="assets/images/ads/home7.jpg" class="img-responsive" />
+                    </div>
+                    <!-- /advert-users -->
+
+
+                </div>
+
+
+            </div>
+            <!-- /grid -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</div>
+<!-- /page container -->

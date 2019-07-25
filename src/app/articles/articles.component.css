@@ -1,0 +1,47 @@
+.clsImg {
+    min-height: 100%;
+    min-width: 100%;
+    cursor: pointer;
+}
+
+.container_img .btn {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: white;
+    color: #000;
+    font-size: 20px;
+    padding: 16px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.container_img .btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.container_btn .btn {
+    position: absolute;
+    top: 10%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #A09F9F;
+    color: #565555;
+    font-size: 20px;
+    padding: 8px 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 1%;
+    text-align: center;
+}
+
+.container_btn .btn:hover {
+    background-color: #7B7A7A;
+    color: #fff;
+}

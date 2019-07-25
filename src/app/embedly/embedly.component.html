@@ -1,0 +1,39 @@
+<div *ngIf="showMeLink">
+    <form [formGroup]="addLinkForm" (ngSubmit)="onLinkFormSubmit()">
+        <div class="form-group has-feedback has-feedback-left">
+            <input type="url" (keyup)="onPaste($event.target.value)" class="form-control" placeholder="Type or paste a link you like to share here !">
+
+            <div class="form-control-feedback">
+                <i class="icon-hyperlink text-muted"></i>
+            </div>
+        </div>
+        <div class="content-group">
+
+            <img src="{{result.thumbnail_url}}" class="img-responsive" alt="">
+            <h6>{{result.title}}</h6>
+            <span style="position:relative; top: -13px" class="text-size-small text-muted">{{result.provider_name}}</span>
+
+        </div>
+        <div class="form-group" style="padding-top:5px">
+            <textarea name="enter-message" formControlName="message" autosize autofocus style="font-size:12px; color:#959494"
+                class="form-control mb-15 no-border" rows="1" cols="1" placeholder=" Say something about this link !"
+                style="position:relative; top:-5px"></textarea>
+        </div>
+        <input type="hidden" formControlName="author" id="author" [(ngModel)]="author" class="form-control" />
+        <input type="hidden" formControlName="title" id="title" [(ngModel)]="result.title" class="form-control" />
+        <input type="hidden" formControlName="description" id="description" [(ngModel)]="result.description" class="form-control">
+        <input type="hidden" formControlName="post_url" id="post_url" [(ngModel)]="result.url" class="form-control">
+        <input type="hidden" formControlName="provider_url" id="provider_url" [(ngModel)]="result.provider_url" class="form-control">
+        <input type="hidden" formControlName="provider_name" id="provider_name" [(ngModel)]="result.provider_name"
+            class="form-control">
+        <input type="hidden" formControlName="thumbnail_url" id="thumbnail_url" [(ngModel)]="result.thumbnail_url"
+            class="form-control">
+        <input type="hidden" formControlName="html" [(ngModel)]="result.html" class="form-control">
+
+
+        <div class="col-xs-12 text-right">
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+
+    </form>
+</div>

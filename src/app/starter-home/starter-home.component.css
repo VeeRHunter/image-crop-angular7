@@ -1,0 +1,25 @@
+.form-rounded {
+    border-radius: 2rem;
+}
+
+::-moz-placeholder {
+    color: rgb(49, 48, 48);
+    font-size: 14px;
+    font-weight: lighter
+}
+
+:-ms-input-placeholder {
+    color: rgb(49, 48, 48);
+    font-size: 14px;
+    font-weight: lighter
+}
+
+::placeholder {
+    color: rgb(49, 48, 48);
+    font-size: 14px;
+    font-weight: lighter
+}
+
+.look {
+    opacity: 0.9;
+}
